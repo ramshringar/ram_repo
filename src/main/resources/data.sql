@@ -1,12 +1,12 @@
-INSERT INTO USERS (empid, accesskey, country) VALUES  ('Miller', 'TRMLLR', 'SG');
-INSERT INTO USERS (empid, accesskey, country) VALUES  ('Tessa', 'TRTSSA', 'SG');
-INSERT INTO USERS (empid, accesskey, country) VALUES  ('Dosson', 'TRDSSN', 'HK');
-INSERT INTO USERS (empid, accesskey, country) VALUES  ('Ricky', 'TRRCKY', 'SG');
-INSERT INTO USERS (empid, accesskey, country) VALUES  ('Aaron', 'TRARON', 'SG');
-INSERT INTO USERS (empid, accesskey, country) VALUES  ('Bob', 'TRBOB', 'HK');
+INSERT INTO USERS (emp_id, access_key, country) VALUES  ('Miller', 'TRMLLR', 'SG');
+INSERT INTO USERS (emp_id, access_key, country) VALUES  ('Tessa', 'TRTSSA', 'SG');
+INSERT INTO USERS (emp_id, access_key, country) VALUES  ('Dosson', 'TRDSSN', 'HK');
+INSERT INTO USERS (emp_id, access_key, country) VALUES  ('Ricky', 'TRRCKY', 'SG');
+INSERT INTO USERS (emp_id, access_key, country) VALUES  ('Aaron', 'TRARON', 'SG');
+INSERT INTO USERS (emp_id, access_key, country) VALUES  ('Bob', 'TRBOB', 'HK');
 
-INSERT INTO TEAMHIERARCHY (empid, managerid) VALUES  ('Tessa', 'Miller');
-INSERT INTO TEAMHIERARCHY (empid, managerid) VALUES  ('Dosson', 'Miller');
-INSERT INTO TEAMHIERARCHY (empid, managerid) VALUES  ('Ricky', 'Tessa');
-INSERT INTO TEAMHIERARCHY (empid, managerid) VALUES  ('Aaron', 'Tessa');
-INSERT INTO TEAMHIERARCHY (empid, managerid) VALUES  ('Bob', 'Dosson');
+INSERT INTO TEAMHIERARCHY (emp_id, manager_id) VALUES  ('Tessa', 'Miller');
+INSERT INTO TEAMHIERARCHY (emp_id, manager_id) VALUES  ('Dosson', 'Miller');
+INSERT INTO TEAMHIERARCHY (emp_id, manager_id) VALUES  ('Ricky', 'Tessa');
+INSERT INTO TEAMHIERARCHY (emp_id, manager_id) VALUES  ('Aaron', 'Tessa');
+INSERT INTO TEAMHIERARCHY (emp_id, manager_id) VALUES  ('Bob', 'Dosson');

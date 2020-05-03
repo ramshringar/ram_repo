@@ -2,13 +2,13 @@ package com.rak.quick.assignment.controller;
 
 import java.util.List;
 
-import javax.validation.constraints.NotNull;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rak.quick.assignment.exception.InvalidUserAccessException;
 import com.rak.quick.assignment.service.UserAccessService;
 import com.rak.quick.assignment.to.UserAccessTO;
 
@@ -20,23 +20,25 @@ public class RestApiController {
 	
 	@RequestMapping(value="/userAccess", consumes = "application/json", produces = "application/json",
 			method = RequestMethod.POST)
-	public void createUserAccess(@NotNull UserAccessTO userAccess) {
+	public void createUserAccess(@RequestBody UserAccessTO userAccess) throws InvalidUserAccessException {
 		userAccessService.createUserAccess(userAccess);
 	}
 	
 	@RequestMapping(value="/allUserAccess", consumes = "application/json", produces = "application/json",
 			method = RequestMethod.POST)
-	public void createAllUserAccess(@NotNull List<UserAccessTO> allUserAccess) {
+	public void createAllUserAccess(@RequestBody List<UserAccessTO> allUserAccess) throws InvalidUserAccessException {
 		userAccessService.createAllUserAccess(allUserAccess);
 	}
 	
+	//TODO Only testing purpose
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public String getTest() {
+	public UserAccessTO getTest() throws InvalidUserAccessException {
 		userAccessService.createUserAccess(getUserAccessTO());
-		return "testing is successful";
+		return getUserAccessTO();
 	}
 	
-	private UserAccessTO getUserAccessTO() {
+	//TODO Testing purpose
+	private UserAccessTO getUserAccessTO() { 
 		UserAccessTO accessTO = new UserAccessTO();
 		accessTO.setEmpId("Miller");
 		accessTO.setAccessKey("TRMLLR");
